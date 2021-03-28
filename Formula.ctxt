@@ -1,0 +1,29 @@
+#BlueJ class context
+comment0.target=Formula
+comment1.params=terms
+comment1.target=Formula(java.util.ArrayList)
+comment1.text=\r\n\ Makes\ a\ formula\ containing\ a\ copy\ of\ terms.\r\n
+comment2.params=s
+comment2.target=Formula(java.lang.String)
+comment2.text=\r\n\ Parses\ s\ to\ construct\ a\ formula.\ s\ will\ be\ a\ legal\ sequence\ \r\n\ of\ terms\ with\ no\ whitespace,\ e.g.\ "AX3YM67"\ or\ "Z".\ \ \r\n\ The\ terms\ in\ the\ field\ must\ be\ in\ the\ same\ order\ as\ in\ s.\ \r\n
+comment3.params=
+comment3.target=java.util.ArrayList\ getTerms()
+comment3.text=\r\n\ Returns\ the\ terms\ of\ the\ formula.\r\n
+comment4.params=s
+comment4.target=int\ lastUC(java.lang.String)
+comment4.text=\r\n\ Returns\ the\ index\ in\ s\ where\ the\ rightmost\ upper-case\ letter\ sits,\ \r\n\ e.g.\ lastTerm("AX3YM67")\ returns\ 4.\ \r\n\ Returns\ -1\ if\ there\ are\ no\ upper-case\ letters.\ \r\n
+comment5.params=element
+comment5.target=int\ countElement(char)
+comment5.text=\r\n\ Returns\ the\ total\ number\ of\ atoms\ of\ element\ in\ terms.\ \r\n\ e.g.\ if\ terms\ \=\ <<W,2>,<X,1>,<W,5>>,\ countElement('W')\ returns\ 7,\ \r\n\ countElement('X')\ returns\ 1,\ and\ countElement('Q')\ returns\ 0.\r\n
+comment6.params=
+comment6.target=java.util.HashMap\ termListToHash()
+comment7.params=
+comment7.target=void\ standardise()
+comment7.text=\r\n\ Puts\ terms\ in\ standardised\ form,\ where\ each\ element\ present\ is\ \r\n\ represented\ by\ exactly\ one\ term,\ and\ terms\ are\ in\ alphabetical\ order.\r\n\ e.g.\ <<C,3>,<D,1>,<B,2>,<D,2>,<C,1>>\ becomes\ <<B,2>,<C,4>,<D,3>>.\r\n
+comment8.params=other
+comment8.target=boolean\ isIsomer(Formula)
+comment8.text=\r\n\ Returns\ true\ iff\ this\ formula\ and\ other\ are\ isomers,\ \r\n\ i.e.\ they\ contain\ the\ same\ number\ of\ every\ Bydysawd\ element.\ \r\n
+comment9.params=
+comment9.target=java.lang.String\ display()
+comment9.text=\r\n\ Returns\ the\ formula\ as\ a\ String.\ \r\n\ e.g.\ if\ terms\ \=\ <<B,22>,<E,1>,<D,3>>,\ it\ returns\ "B22ED3".\ \r\n
+numComments=10

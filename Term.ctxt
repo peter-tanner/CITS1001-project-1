@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Term
+comment0.text=\r\n\ Term\ represents\ one\ term\ in\ a\ Bydysawd\ chemical\ formula.\ \r\n\ A\ term\ has\ the\ symbol\ for\ a\ Bydysawd\ element,\ i.e.\ an\ upper-case\ letter,\ \r\n\ optionally\ followed\ by\ a\ positive\ integer,\ e.g.\ S\ or\ F460.\ \r\n\r\n\ @author\ Lyndon\ While\r\n\ @version\ 2021\r\n
+comment1.params=element\ count
+comment1.target=Term(char,\ int)
+comment1.text=\r\n\ Makes\ a\ term\ containing\ element\ and\ count.\r\n
+comment2.params=s
+comment2.target=Term(java.lang.String)
+comment2.text=\r\n\ Parses\ s\ to\ construct\ a\ term.\ s\ will\ be\ a\ legal\ term\ with\ no\ whitespace,\ \r\n\ e.g.\ "S"\ or\ "F460".\ If\ there\ is\ no\ number,\ it\ represents\ one\ atom.\ \r\n
+comment3.params=
+comment3.target=char\ getElement()
+comment3.text=\r\n\ Returns\ the\ element\ symbol.\r\n
+comment4.params=
+comment4.target=int\ getCount()
+comment4.text=\r\n\ Returns\ the\ number\ of\ atoms.\r\n
+comment5.params=
+comment5.target=java.lang.String\ display()
+comment5.text=\r\n\ Returns\ the\ term\ as\ a\ String.\ Omits\ the\ number\ if\ it\ is\ 1.\ \r\n
+numComments=6

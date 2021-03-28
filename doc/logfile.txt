@@ -1,0 +1,101 @@
+Project documentation
+<---- javadoc command: ---->
+C:\Program Files\BlueJ\jdk\bin\javadoc.exe
+-sourcepath
+B:\UNIDRIVE\CITS1001\Project1
+-source
+11
+-classpath
+C:\Program Files\BlueJ\lib\bluejcore.jar;C:\Program Files\BlueJ\lib\junit-4.12.jar;C:\Program Files\BlueJ\lib\junit-jupiter-5.5.2.jar;C:\Program Files\BlueJ\lib\junit-jupiter-api-5.5.2.jar;C:\Program Files\BlueJ\lib\junit-jupiter-engine-5.5.2.jar;C:\Program Files\BlueJ\lib\junit-jupiter-migrationsupport-5.5.2.jar;C:\Program Files\BlueJ\lib\junit-jupiter-params-5.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-commons-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-console-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-console-standalone-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-engine-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-launcher-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-reporting-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-runner-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-suite-api-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-platform-testkit-1.5.2.jar;C:\Program Files\BlueJ\lib\junit-quickcheck-core-0.9.jar;C:\Program Files\BlueJ\lib\junit-vintage-engine-5.5.2.jar;C:\Program Files\BlueJ\lib\hamcrest-core-1.3.jar;C:\Program Files\BlueJ\lib\hamcrest-library-1.3.jar;C:\Program Files\BlueJ\lib\lang-stride.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.base.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.controls.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.fxml.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.graphics.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.media.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.properties.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.swing.jar;C:\Program Files\BlueJ\lib\javafx\lib\javafx.web.jar;B:\UNIDRIVE\CITS1001\Project1
+-d
+B:\UNIDRIVE\CITS1001\Project1\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-doctitle
+Project1
+-windowtitle
+Project1
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-link
+https://docs.oracle.com/en/java/javase/11/docs/api/
+B:\UNIDRIVE\CITS1001\Project1/Formula.java
+B:\UNIDRIVE\CITS1001\Project1/TestTerm.java
+B:\UNIDRIVE\CITS1001\Project1/TestEquation.java
+B:\UNIDRIVE\CITS1001\Project1/TestFormula.java
+B:\UNIDRIVE\CITS1001\Project1/Equation.java
+B:\UNIDRIVE\CITS1001\Project1/Term.java
+<---- end of javadoc command ---->
+Loading source file B:\UNIDRIVE\CITS1001\Project1\Formula.java...
+Loading source file B:\UNIDRIVE\CITS1001\Project1\TestTerm.java...
+Loading source file B:\UNIDRIVE\CITS1001\Project1\TestEquation.java...
+Loading source file B:\UNIDRIVE\CITS1001\Project1\TestFormula.java...
+Loading source file B:\UNIDRIVE\CITS1001\Project1\Equation.java...
+Loading source file B:\UNIDRIVE\CITS1001\Project1\Term.java...
+Constructing Javadoc information...
+Standard Doclet version 11.0.2
+Building tree for all the packages and classes...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\Equation.html...
+B:\UNIDRIVE\CITS1001\Project1\Equation.java:47: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Equation.java:47: warning - invalid usage of tag >
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\Formula.html...
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:88: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:88: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:88: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:88: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:88: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:88: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:88: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:88: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:105: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:138: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:138: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:138: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:138: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:138: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:138: warning - invalid usage of tag <
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:138: warning - invalid usage of tag >
+B:\UNIDRIVE\CITS1001\Project1\Formula.java:138: warning - invalid usage of tag >
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\Term.html...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\TestEquation.html...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\TestFormula.html...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\TestTerm.html...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\package-summary.html...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\package-tree.html...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\constant-values.html...
+Building index for all the packages and classes...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\overview-tree.html...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\index-all.html...
+Building index for all classes...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\allclasses-index.html...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\allpackages-index.html...
+Building index for all classes...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\allclasses.html...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\allclasses.html...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\index.html...
+Generating B:\UNIDRIVE\CITS1001\Project1\doc\help-doc.html...
+38 warnings

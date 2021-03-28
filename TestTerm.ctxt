@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=TestTerm
+comment0.text=\r\n\ TestTerm\ tests\ the\ class\ Term.\r\n\r\n\ @author\ \ Lyndon\ While\r\n\ @version\ 2021\ v1\r\n
+comment1.params=
+comment1.target=void\ testTerm1()
+comment2.params=
+comment2.target=void\ testTerm2()
+comment3.params=
+comment3.target=void\ testTermDisplay()
+numComments=4
