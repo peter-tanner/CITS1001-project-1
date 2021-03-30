@@ -29,31 +29,10 @@ public class Formula
     public Formula(String s)
     {
         this.terms = new ArrayList<>();
-
-        // Add whitespace so that our loop adds in the last element if no number present.
-        char[] formulaChars = (s+'z').toCharArray();
-        String count = "";
-        char prevElement = '*';
-        for (char c : formulaChars) {
-            if (Character.isDigit(c)) {
-                count += Character.toString(c);
-            } else if (Character.isLetter(c)) { //In case of ANSI escapes or whatever.
-                int n;
-                if (count == "") {
-                    n = 1;
-                } else {
-                    n = Integer.parseInt(count);
-                }
-                Term term = new Term(prevElement, n);
-                this.terms.add(term);
-                prevElement = c;
-                count = "";
-            }
+        String[] termsStr = s.split("(?=[A-Z])");
+        for (String term : termsStr) {
+            this.terms.add(new Term(term));
         }
-
-        //Remove the first term which is a garbage one.
-        // element => '*', count => 1
-        this.terms.remove(0);
     }
 
     /**
@@ -99,6 +78,11 @@ public class Formula
         return count;
     }
 
+    /**
+     * Converts the formula object to a hashmap with each element
+     * character mapping to its coefficient
+     * @return HashMap<Character,Integer>
+     */
     public HashMap<Character,Integer> getHashMap() {
         HashMap<Character,Integer> hm = new HashMap<>();
         for (Term term : this.terms) {

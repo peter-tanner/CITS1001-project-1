@@ -151,6 +151,10 @@ public class TestEquation
         assertFalse("", new Equation("A + B + BC = AB+AB").isValid());
         assertFalse("", new Equation("A + BC2 + BC2 = AB + BC + C4").isValid());
         assertFalse("", new Equation("A + BC2 + BC2 = AB2C + C2").isValid());
+
+        //add test for multipliers
+        assertTrue("", new Equation("2A + 2B = 2AB").isValid());
+        assertTrue("", new Equation("H2A + H4 + H2 = 4H2 + A").isValid());
     }
 
     @Test

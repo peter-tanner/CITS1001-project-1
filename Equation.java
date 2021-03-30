@@ -1,4 +1,4 @@
-/**
+    /**
  * Equation represents a Bydysawd chemical equation. 
  * An equation can have multiple formulas on each side, 
  * e.g. X3 + Y2Z2 = ZX + Y2X2 + Z. 
@@ -61,26 +61,48 @@ public class Equation
         return indexes;
     }
     
+
+    public static int parseMultiplier(String s) {
+        String numStr = "";
+        for (char c : s.toCharArray()) {
+            if (Character.isDigit(c)) {
+                numStr += c;
+            } else {
+                break;
+            }
+        }
+        if (numStr != "") {
+            return Integer.parseInt(numStr);
+        } else {
+            return 1;
+        }
+    }
+
     /**
      * Parses s as one side of an equation. 
      * s will contain a series of formulas separated by pluses, 
      * and it may contain whitespace between formulas and symbols. 
      */
-    public static ArrayList<Formula> parseSide(String s)
+    public static ArrayList<Formula> parseSide(String sideStr)
     {
         ArrayList<Formula> side = new ArrayList<>();
-        s.replaceAll(" ", "");
-        for (String formulaStr : s.split("\\+")) {
-            side.add(new Formula(formulaStr));
+        sideStr = sideStr.replaceAll("\\s","");
+        for (String formulaStr : sideStr.split("\\+")) {
+            int mult = parseMultiplier(formulaStr);
+            formulaStr = formulaStr.replaceAll("^[0-9]+", "");
+            Formula formula = new Formula(formulaStr);
+            for (int i = 0; i < mult; i++) {
+                side.add(formula);
+            }
         }
         return side;
 
-        // // Make an intentionally unbalanced equation (<s>=Z).
+        // // Make an intentionally unbalanced equation (<sideStr>=Z).
         // // Since we're getting only one side of the equation (LEFT), right can
         // //      be anything (Z)
         // // We're doing this so that we can leverage the parser that I already
         // //      built into the constructor.
-        // Equation eqn = new Equation(s+"=Z");
+        // Equation eqn = new Equation(sideStr+"=Z");
         // return eqn.getLHS();
     }
 

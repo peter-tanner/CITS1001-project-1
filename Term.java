@@ -28,7 +28,7 @@ public class Term
      */
     public Term(String s)
     {
-        element = s.charAt(0);
+        this.element = s.charAt(0);
         if (s.length() > 1) {
             this.count = Integer.parseInt(s.substring(1));
         } else {
@@ -59,7 +59,7 @@ public class Term
     {
         String displayString = String.valueOf(this.element);
         if (this.count > 1) {
-            displayString += Integer.toString(this.count);
+            displayString += this.count;
         }
         return displayString;
     }
