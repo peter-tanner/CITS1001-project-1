@@ -2,20 +2,20 @@
  * Formula represents a Bydysawd chemical formula. 
  * A formula is a sequence of terms, e.g. AX3YM67. 
  *
- * @author Lyndon While
+ * @author Lyndon While, Peter Tanner [23195279]
  * @version 2021
  */
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Formula
 {
     // the constituent terms of the formula
-    private ArrayList<Term> terms;
+    private ArrayList<Term> terms = new ArrayList<>();
 
     /**
      * Makes a formula containing a copy of terms.
      */
+    @SuppressWarnings("unchecked")
     public Formula(ArrayList<Term> terms)
     {
         this.terms = (ArrayList<Term>) terms.clone();
@@ -28,8 +28,7 @@ public class Formula
      */
     public Formula(String s)
     {
-        this.terms = new ArrayList<>();
-        String[] termsStr = s.split("(?=[A-Z])");
+        String[] termsStr = s.split("(?=[^0-9])");//Split along terms (symbols).
         for (String term : termsStr) {
             this.terms.add(new Term(term));
         }
@@ -50,12 +49,23 @@ public class Formula
      */
     public static int lastUC(String s)
     {
-        //Let's not use stringbuilder for this one...
-        char[] formulaChars = s.toCharArray();
-
-        //Index in reverse - should yield better times on average but still O(n)
-        for (int i = formulaChars.length-1; i >= 0; i--) {
-            if (Character.isLetter( formulaChars[i] )) {
+        for (int i = s.length()-1; i >= 0; i--) {
+            if (Character.isUpperCase( s.charAt(i) )) {
+                return i;
+            }
+        }
+        return -1;
+    }
+    /**
+     * Returns the index in s where the leftmost upper-case letter sits, 
+     * e.g. lastTerm("AX3YM67") returns 4. 
+     * Returns -1 if there are no upper-case letters. 
+     * Should be faster than using Regex (s.replaceAll("[A-Z].*","").length())
+     */
+    public static int firstUC(String s)
+    {
+        for (int i = 0; i < s.length(); i++) {
+            if (Character.isUpperCase( s.charAt(i) )) {
                 return i;
             }
         }
@@ -79,51 +89,36 @@ public class Formula
     }
 
     /**
-     * Converts the formula object to a hashmap with each element
-     * character mapping to its coefficient
-     * @return HashMap<Character,Integer>
-     */
-    public HashMap<Character,Integer> getHashMap() {
-        HashMap<Character,Integer> hm = new HashMap<>();
-        for (Term term : this.terms) {
-            char element = term.getElement();
-            int elementTotal = term.getCount();
-            if (hm.get(element) != null) {
-                elementTotal += hm.get(element);
-            }
-            hm.put(element, elementTotal);
-        }
-        return hm;
-    }
-
-    /**
      * Puts terms in standardised form, where each element present is 
      * represented by exactly one term, and terms are in alphabetical order.
      * e.g. <<C,3>,<D,1>,<B,2>,<D,2>,<C,1>> becomes <<B,2>,<C,4>,<D,3>>.
      */
     public void standardise()
     {
-        HashMap<Character,Integer> hm = this.getHashMap();
-        this.terms.clear();
-        for (char element : hm.keySet()) {
-            Term standardTerm = new Term(element, hm.get(element));
-            this.terms.add(standardTerm);
+        ArrayList<Term> termList = new ArrayList<>();
+        for (char c = 'A'; c <= 'Z'; c++) {
+            int elemTotal = this.countElement(c);
+            if (elemTotal > 0) {
+                termList.add( new Term(c, elemTotal) );
+            }
         }
+        this.terms = termList;
     }
 
     /**
-     * Returns true iff this formula and other are isomers, 
+     * Returns true if this formula and other are isomers, 
      * i.e. they contain the same number of every Bydysawd element. 
      */
     public boolean isIsomer(Formula other)
     {
-        HashMap<Character,Integer> hm2 = other.getHashMap();
-        HashMap<Character,Integer> hm1 = this.getHashMap();
-
-        if (hm2.equals(hm1)) {
-            return true; 
-        }
-        return false;
+        //Shallow copy to not (destructively) standardize originals
+        Formula formula1 = new Formula(this.terms);
+        Formula formula2 = new Formula(other.terms);
+        formula1.standardise();
+        formula2.standardise();
+        ArrayList<Term> formula1Terms = formula1.getTerms();
+        ArrayList<Term> formula2Terms = formula2.getTerms();
+        return formula1Terms.equals(formula2Terms);
     }
 
     /**
@@ -137,5 +132,5 @@ public class Formula
             formulaString += term.display();
         }
         return formulaString;
-    }
+    }  
 }

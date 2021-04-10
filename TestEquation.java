@@ -112,7 +112,7 @@ public class TestEquation
             assertEquals("",   1 + k, ts.get(k).getCount()); 
         }
         
-        c = Equation.parseSide("X+Y2"); 
+        c = Equation.parseSide("\nX\n\t + \n Y \t2"); 
         assertEquals("", 2, c.size()); 
         for (int k = 0; k < 2; k++)
         {
@@ -143,6 +143,8 @@ public class TestEquation
     public void testisBalanced()
     {
         assertTrue("", new Equation("A + B = AB").isValid());
+        assertTrue("", new Equation("B + A = AB").isValid());
+        assertTrue("", new Equation("A + B = BA").isValid());
         assertTrue("", new Equation("A + B + BA = A2B2").isValid());
         assertTrue("", new Equation("A + BC2 + BC2 = AB + BC + C3").isValid());
         assertTrue("", new Equation("A + BC2 + BC2 = AB2C + C3").isValid());
@@ -151,10 +153,6 @@ public class TestEquation
         assertFalse("", new Equation("A + B + BC = AB+AB").isValid());
         assertFalse("", new Equation("A + BC2 + BC2 = AB + BC + C4").isValid());
         assertFalse("", new Equation("A + BC2 + BC2 = AB2C + C2").isValid());
-
-        //add test for multipliers
-        assertTrue("", new Equation("2A + 2B = 2AB").isValid());
-        assertTrue("", new Equation("H2A + H4 + H2 = 4H2 + A").isValid());
     }
 
     @Test
@@ -166,5 +164,21 @@ public class TestEquation
                                    ("A+B+B=AB"));
         assertTrue("", new Equation("A13 + B500+B56 = A11B+AB222+AB333").display().replace(" ","").equals
                                    ("A13+B500+B56=A11B+AB222+AB333"));
+        assertTrue("", new Equation("A13 + B 500+B56 = A11 B +A B222+A   B333").display().replace(" ","").equals
+                                    ("A13+B500+B56=A11B+AB222+AB333"));
+    }
+    
+
+    @Test
+    public void testMultiplier() {
+        //add test for multipliers
+        assertTrue("", new Equation("2A + 2B = 2AB").isValid());
+        assertTrue("", new Equation("H2A + H4 + 2H2 = 5H2 + A").isValid());
+        assertTrue("", new Equation("2H2 + CU80 = CH4 + 10U8").isValid());
+        assertTrue("", new Equation("\t2 E \n2F3 + Z12 =\n 4Z3E + 3F2        ").isValid());
+        assertTrue("", new Equation(" S  99 = 3S33\n").isValid());
+
+        assertTrue("", new Equation("\t2 E \n2F3 + Z12 =\n 4Z3E + 3F2        ").display().replace(" ","").equals
+                                   ("E2F3+E2F3+Z12=Z3E+Z3E+Z3E+Z3E+F2+F2+F2"));
     }
 }
