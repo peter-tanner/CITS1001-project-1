@@ -1,5 +1,5 @@
-# CITS1001 Project 1 2021
+# Peter CITS1001 Project 1 2021S1
 
-Uploading this to github
+Finally uploading this to github
 
 Final mark: 40/40 (+5 Additional marks)
